@@ -4,7 +4,9 @@ import java.util.Random;
 
 public class DiceManager {
 
-	//plop
+	//DiceManager simulates dice rolls.
+	//If you simply want a dice roll, use roll()
+	//If you want something that brings you back successes based on a given difficulty, use realHandler()
 
 	//throws nbDices dices from 1 to diceTypes. ex : 4d10 -> roll(4,10)
 	//returns throws in a Arraylist
@@ -156,7 +158,10 @@ public class DiceManager {
 			return successes+criticals;
 			
 		}else if(rerolltens && !ones){
-			int newsuccesses=realHandler(criticals, diceType, difficulty, rerolltens, ones);
+			int newsuccesses=0;
+			if (criticals!=0){
+				newsuccesses=realHandler(criticals, diceType, difficulty, rerolltens, ones);
+			}
 			return criticals+successes+newsuccesses;
 			
 		}else if(!rerolltens && ones){
@@ -166,12 +171,15 @@ public class DiceManager {
 			
 			//reroll tens AND count fumbles. fumbles kill tens first
 			if (criticals>fumbles){
-				//System.out.println("ONE");
+				
 				
 				int rerolls=criticals-fumbles;
-				fumbles=0;
-				//System.out.println(rerolls);
-				int newsuccesses=realHandler(rerolls, diceType, difficulty, rerolltens, ones);
+				fumbles=0; //useless, except for understanding the logic
+				
+				int newsuccesses=0;
+				if (rerolls!=0){
+					realHandler(rerolls, diceType, difficulty, rerolltens, ones);
+				}
 				return criticals+successes+newsuccesses;
 				
 			}else if(criticals==fumbles){
@@ -199,7 +207,7 @@ public class DiceManager {
 		//System.out.println(test2);
 		//test2=dm.rollSuccesses(10, 10, 5, true);
 		//System.out.println(test2);
-		test2=dm.realHandler(10, 10, 7, true, true);
+		test2=dm.realHandler(10, 10, 7, true, false);
 		System.out.println(test2);
 
 	}

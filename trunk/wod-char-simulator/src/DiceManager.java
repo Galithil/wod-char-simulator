@@ -172,21 +172,24 @@ public class DiceManager {
 			//reroll tens AND count fumbles. fumbles kill tens first
 			if (criticals>fumbles){
 				
-				
-				int rerolls=criticals-fumbles;
+				System.out.println(criticals+" crits & "+fumbles+" fumbles");
+				criticals-=fumbles;
+				System.out.println("reste "+criticals);
 				fumbles=0; //useless, except for understanding the logic
 				
 				int newsuccesses=0;
-				if (rerolls!=0){
-					realHandler(rerolls, diceType, difficulty, rerolltens, ones);
+				if (criticals!=0){
+					
+					newsuccesses=realHandler(criticals, diceType, difficulty, rerolltens, false);
+				System.out.println(newsuccesses+" new successes");
 				}
 				return criticals+successes+newsuccesses;
 				
 			}else if(criticals==fumbles){
-				//System.out.println("TWO");
+				
 				return successes;
 			}else{
-				//System.out.println("THREE");
+				
 				return (successes+criticals-fumbles);
 			}
 			

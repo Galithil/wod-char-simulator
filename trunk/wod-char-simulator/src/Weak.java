@@ -11,4 +11,8 @@ public class Weak extends Levels {
 		super.rAggM=-2;
 		super.rerolltens=false;
 	}
+            @Override
+        public String toString(){
+            return "Weak";
+        }
 }

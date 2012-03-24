@@ -19,13 +19,15 @@ public abstract class Creature {
 			int resistanceD, int rAggD, Levels lev) {
 		super();
 		this.name=name;
-		this.initD = initD;
-		this.attackD = attackD;
-		this.damageD = damageD;
-		this.dodgeD = dodgeD;
-		this.resistanceD = resistanceD;
-		this.rAggD=rAggD;
+                //min dice number is 0
+		this.initD = Math.max(0,initD+lev.initM);
+		this.attackD = Math.max(0,attackD+lev.attackM);
+		this.damageD = Math.max(0,damageD+lev.damageM);
+		this.dodgeD = Math.max(0,dodgeD+lev.dodgeM);
+		this.resistanceD = Math.max(0,resistanceD+lev.resistanceM);
+		this.rAggD=Math.max(0,rAggD+lev.rAggM);
 		this.lev=lev;
+
 	}
 	
 	public int initRoll(){
@@ -70,7 +72,8 @@ public abstract class Creature {
 	}
         public String toString(){
 
-        return (this.name+this.lev.toString());
+        return (this.name+"   "+this.lev.toString());
             
         }
+        
 }

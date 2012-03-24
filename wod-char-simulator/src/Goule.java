@@ -6,6 +6,6 @@ public class Goule extends Creature {
 		
 	}
          public String toString(){
-         return (this.name+" Goule "+this.lev.toString());
+         return (this.name+"   Goule   "+this.lev.toString());
          }
 }

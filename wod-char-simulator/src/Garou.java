@@ -7,7 +7,7 @@ public class Garou extends Creature {
 	}
          public String toString(){
 
-        return (this.name+" Garou "+this.lev.toString());
+        return (this.name+"   Garou   "+this.lev.toString());
 
         }
 

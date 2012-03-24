@@ -17,12 +17,26 @@ public class Charcreator extends javax.swing.JFrame {
 
     javax.swing.JFrame parent=null;
     CharManager cm;
+
+    //dice values displayed
+    int initD=0;
+    int attackD=0;
+    int damageD=0;
+    int dodgeD=0;
+    int resistD=0;
+    int aggD=0;
+
+
+
     /** Creates new form Charcreator */
     public Charcreator() {
         initComponents();
     }
      public Charcreator( javax.swing.JFrame parent, CharManager cm) {
+        
         initComponents();
+        mySetup();
+        toggleEditable(false);
         this.cm=cm;
         this.parent=parent;
     }
@@ -40,13 +54,51 @@ public class Charcreator extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Goule", "Garou", "Vampire", "Custom" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jComboBox1FocusGained(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Weak", "Medium", "Strong" }));
         jComboBox2.setSelectedIndex(1);
+        jComboBox2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox2ItemStateChanged(evt);
+            }
+        });
+        jComboBox2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jComboBox2FocusGained(evt);
+            }
+        });
 
         jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -57,31 +109,149 @@ public class Charcreator extends javax.swing.JFrame {
 
         jTextField1.setText("Name");
 
+        jLabel1.setText("Init ");
+
+        jTextField2.setColumns(2);
+        jTextField2.setText("jTextField2");
+
+        jLabel2.setText("Attack");
+
+        jTextField3.setColumns(2);
+        jTextField3.setText("jTextField2");
+
+        jTextField4.setColumns(2);
+        jTextField4.setText("jTextField2");
+
+        jLabel3.setText("Damage");
+
+        jTextField5.setColumns(2);
+        jTextField5.setText("jTextField2");
+
+        jLabel4.setText("Aggravated");
+
+        jTextField6.setColumns(2);
+        jTextField6.setText("jTextField2");
+
+        jLabel5.setText("Dodge");
+
+        jTextField7.setColumns(2);
+        jTextField7.setText("jTextField2");
+
+        jLabel6.setText("Resistance");
+
+        jLabel7.setText("D");
+
+        jLabel8.setText("D");
+
+        jLabel9.setText("D");
+
+        jLabel10.setText("D");
+
+        jLabel11.setText("D");
+
+        jLabel12.setText("D");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                                    .addComponent(jLabel11)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
+                        .addGap(79, 79, 79))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel9)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,13 +273,153 @@ public class Charcreator extends javax.swing.JFrame {
        }else if (this.jComboBox2.getSelectedIndex()==2){
            cm.addCrea(new Garou(this.jTextField1.getText(), lev));
 
-       }else{
+       }else if (this.jComboBox2.getSelectedIndex()==3){
            cm.addCrea(new Vampire(this.jTextField1.getText(), lev));
 
+       }else{
+          cm.addCrea(new Custom(
+                  this.jTextField1.getText(),
+                   Integer.parseInt(this.jTextField2.getText()),
+                   Integer.parseInt(this.jTextField3.getText()),
+                   Integer.parseInt(this.jTextField4.getText()),
+                   Integer.parseInt(this.jTextField7.getText()),
+                   Integer.parseInt(this.jTextField5.getText()),
+                   Integer.parseInt(this.jTextField6.getText())
+                   ));
        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jComboBox1FocusGained
+       this.mySetup(); // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1FocusGained
+
+    private void jComboBox2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jComboBox2FocusGained
+       this.mySetup();
+    }//GEN-LAST:event_jComboBox2FocusGained
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        if (this.jComboBox1.getSelectedIndex()==3){
+            this.toggleEditable(true);
+        }else{
+            this.toggleEditable(false);
+        }
+        this.mySetup();// TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
+       this.mySetup(); // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ItemStateChanged
+
+    private void mySetup(){
+
+            //used to get dice values
+    Creature dummyGouleM=new Goule("dummy",new Medium());
+    Creature dummyGouleW=new Goule("dummy",new Weak());
+    Creature dummyGouleS=new Goule("dummy",new Strong());
+    Creature dummyGarouW=new Garou("dummy",new Weak());
+    Creature dummyGarouM=new Garou("dummy",new Medium());
+    Creature dummyGarouS=new Garou("dummy",new Strong());
+    Creature dummyVampireW=new Vampire("dummy",new Weak());
+    Creature dummyVampireM=new Vampire("dummy",new Medium());
+    Creature dummyVampireS=new Vampire("dummy",new Strong());
+
+
+    if (this.jComboBox1.getSelectedIndex()==0){
+
+        if(this.jComboBox2.getSelectedIndex()==0){
+            this.initD=dummyGouleW.initD;
+            this.attackD=dummyGouleW.attackD;
+            this.damageD=dummyGouleW.damageD;
+            this.dodgeD=dummyGouleW.dodgeD;
+            this.resistD=dummyGouleW.resistanceD;
+            this.aggD=dummyGouleW.rAggD;
+            
+        }else if(this.jComboBox2.getSelectedIndex()==1){
+            this.initD=dummyGouleM.initD;
+            this.attackD=dummyGouleM.attackD;
+            this.damageD=dummyGouleM.damageD;
+            this.dodgeD=dummyGouleM.dodgeD;
+            this.resistD=dummyGouleM.resistanceD;
+            this.aggD=dummyGouleM.rAggD;
+        }else{
+            this.initD=dummyGouleS.initD;
+            this.attackD=dummyGouleS.attackD;
+            this.damageD=dummyGouleS.damageD;
+            this.dodgeD=dummyGouleS.dodgeD;
+            this.resistD=dummyGouleS.resistanceD;
+            this.aggD=dummyGouleS.rAggD;
+        }
+    }else if(this.jComboBox1.getSelectedIndex()==1){
+
+        if(this.jComboBox2.getSelectedIndex()==0){
+            this.initD=dummyGarouW.initD;
+            this.attackD=dummyGarouW.attackD;
+            this.damageD=dummyGarouW.damageD;
+            this.dodgeD=dummyGarouW.dodgeD;
+            this.resistD=dummyGarouW.resistanceD;
+            this.aggD=dummyGarouW.rAggD;
+        }else if(this.jComboBox2.getSelectedIndex()==1){
+            this.initD=dummyGarouM.initD;
+            this.attackD=dummyGarouM.attackD;
+            this.damageD=dummyGarouM.damageD;
+            this.dodgeD=dummyGarouM.dodgeD;
+            this.resistD=dummyGarouM.resistanceD;
+            this.aggD=dummyGarouM.rAggD;
+        }else{
+            this.initD=dummyGarouS.initD;
+            this.attackD=dummyGarouS.attackD;
+            this.damageD=dummyGarouS.damageD;
+            this.dodgeD=dummyGarouS.dodgeD;
+            this.resistD=dummyGarouS.resistanceD;
+            this.aggD=dummyGarouS.rAggD;
+        }
+    }else if(this.jComboBox1.getSelectedIndex()==2){
+
+        if(this.jComboBox2.getSelectedIndex()==0){
+            this.initD=dummyVampireW.initD;
+            this.attackD=dummyVampireW.attackD;
+            this.damageD=dummyVampireW.damageD;
+            this.dodgeD=dummyVampireW.dodgeD;
+            this.resistD=dummyVampireW.resistanceD;
+            this.aggD=dummyVampireW.rAggD;
+            System.out.println(dummyVampireM.attackD+"plop"+dummyVampireW.attackD);
+        }else if(this.jComboBox2.getSelectedIndex()==1){
+            this.initD=dummyVampireM.initD;
+            this.attackD=dummyVampireM.attackD;
+            this.damageD=dummyVampireM.damageD;
+            this.dodgeD=dummyVampireM.dodgeD;
+            this.resistD=dummyVampireM.resistanceD;
+            this.aggD=dummyVampireM.rAggD;
+        }else{
+            this.initD=dummyVampireS.initD;
+            this.attackD=dummyVampireS.attackD;
+            this.damageD=dummyVampireS.damageD;
+            this.dodgeD=dummyVampireS.dodgeD;
+            this.resistD=dummyVampireS.resistanceD;
+            this.aggD=dummyVampireS.rAggD;
+        }
+    }
+
+        this.jTextField2.setText(""+this.initD);
+        this.jTextField3.setText(""+this.attackD);
+        this.jTextField4.setText(""+this.damageD);
+        this.jTextField7.setText(""+this.dodgeD);
+        this.jTextField5.setText(""+this.resistD);
+        this.jTextField6.setText(""+this.aggD);
+
+    }
+
+    private void toggleEditable(boolean b){
+        this.jTextField2.setEditable(b);
+        this.jTextField3.setEditable(b);
+        this.jTextField4.setEditable(b);
+        this.jTextField5.setEditable(b);
+        this.jTextField6.setEditable(b);
+        this.jTextField7.setEditable(b);
+
+        
+    }
     /**
     * @param args the command line arguments
     */
@@ -125,7 +435,25 @@ public class Charcreator extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 
 }

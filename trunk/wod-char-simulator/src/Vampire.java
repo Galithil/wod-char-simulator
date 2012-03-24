@@ -7,6 +7,6 @@ public class Vampire extends Creature {
 	}
     @Override
          public String toString(){
-         return (this.name+" Vampire "+this.lev.toString());
+         return (this.name+"   Vampire   "+this.lev.toString());
          }
 }

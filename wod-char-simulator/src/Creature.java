@@ -1,6 +1,10 @@
 
+import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
+
+
 public abstract class Creature {
 
+	public String name;
 	public int initD;
 	public int attackD;
 	public int damageD;
@@ -11,9 +15,10 @@ public abstract class Creature {
 	
 	private int bonusfromattack=0;
 	
-	public Creature(int initD, int attackD, int damageD, int dodgeD,
+	public Creature(String name, int initD, int attackD, int damageD, int dodgeD,
 			int resistanceD, int rAggD, Levels lev) {
 		super();
+		this.name=name;
 		this.initD = initD;
 		this.attackD = attackD;
 		this.damageD = damageD;
@@ -63,4 +68,9 @@ public abstract class Creature {
 		return(dm.realHandler(rAggD+lev.rAggM, 10, 7, lev.rerolltens, true));
 		
 	}
+        public String toString(){
+
+        return (this.name+this.lev.toString());
+            
+        }
 }

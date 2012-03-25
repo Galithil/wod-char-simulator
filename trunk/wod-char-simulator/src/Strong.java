@@ -13,9 +13,4 @@ public class Strong extends Levels {
 		
 		
 	}
-       
-    @Override
-        public String toString(){
-            return "Strong";
-        }
 }

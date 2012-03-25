@@ -13,8 +13,4 @@ public class Medium extends Levels {
 		
 		
 	}
-            @Override
-        public String toString(){
-            return "Medium";
-        }
 }

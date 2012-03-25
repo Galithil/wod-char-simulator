@@ -1,3 +1,8 @@
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import javax.swing.JToggleButton;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -21,10 +26,78 @@ public class CharRoller extends javax.swing.JFrame {
     }
      public CharRoller(Creature crea) {
         this.myCrea=crea;//the crea name will be used in the window creation.
+        
         initComponents();
+        initArrays();
         
     }
+        //arrays are used to lit damage buttons
+         private void initArrays() {
+        this.BashingB=new ArrayList<JToggleButton>();
+        this.BashingB.add(Bash1);
+        this.BashingB.add(Bash2);
+        this.BashingB.add(Bash3);
+        this.BashingB.add(Bash4);
+        this.BashingB.add(Bash5);
+        this.BashingB.add(Bash6);
+        this.BashingB.add(Bash7);
 
+        this.LethalB=new ArrayList<JToggleButton>();
+        this.LethalB.add(Let1);
+        this.LethalB.add(Let2);
+        this.LethalB.add(Let3);
+        this.LethalB.add(Let4);
+        this.LethalB.add(Let5);
+        this.LethalB.add(Let6);
+        this.LethalB.add(Let7);
+
+        this.AggB=new ArrayList<JToggleButton>();
+        this.AggB.add(Agg1);
+        this.AggB.add(Agg2);
+        this.AggB.add(Agg3);
+        this.AggB.add(Agg4);
+        this.AggB.add(Agg5);
+        this.AggB.add(Agg6);
+        this.AggB.add(Agg7);
+    }
+        //each sub is almost the same, except each one treats one line of buttons
+         private void litBashButtons(int index){
+            
+        index-=1;
+         for(int i=0;i<index;i++){
+            
+            this.BashingB.get(i).setSelected(true);
+         }
+        for(int j=index+1;j<this.BashingB.size();j++){
+
+            this.BashingB.get(j).setSelected(false);
+        }
+
+         }
+         private void litLetButtons(int index ){
+             
+          index-=1;
+         for(int i=0;i<index;i++){
+            this.LethalB.get(i).setSelected(true);
+         }
+          for(int j=index+1;j<this.LethalB.size();j++){
+
+            this.LethalB.get(j).setSelected(false);
+        }
+         }
+         private void litAggButtons(int index){
+             
+         index-=1;
+         
+         for(int i=0;i<index;i++){
+            this.AggB.get(i).setSelected(true);
+            
+         }
+          for(int j=index+1;j<this.AggB.size();j++){
+
+            this.AggB.get(j).setSelected(false);
+        }
+         }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -47,6 +120,30 @@ public class CharRoller extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        Bash1 = new javax.swing.JToggleButton();
+        Bash2 = new javax.swing.JToggleButton();
+        Bash3 = new javax.swing.JToggleButton();
+        Bash4 = new javax.swing.JToggleButton();
+        Bash5 = new javax.swing.JToggleButton();
+        Bash6 = new javax.swing.JToggleButton();
+        Bash7 = new javax.swing.JToggleButton();
+        jLabel8 = new javax.swing.JLabel();
+        Let5 = new javax.swing.JToggleButton();
+        Let4 = new javax.swing.JToggleButton();
+        Let1 = new javax.swing.JToggleButton();
+        Let3 = new javax.swing.JToggleButton();
+        Let2 = new javax.swing.JToggleButton();
+        Let7 = new javax.swing.JToggleButton();
+        jLabel9 = new javax.swing.JLabel();
+        Let6 = new javax.swing.JToggleButton();
+        Agg5 = new javax.swing.JToggleButton();
+        Agg4 = new javax.swing.JToggleButton();
+        Agg1 = new javax.swing.JToggleButton();
+        Agg3 = new javax.swing.JToggleButton();
+        Agg2 = new javax.swing.JToggleButton();
+        Agg7 = new javax.swing.JToggleButton();
+        jLabel10 = new javax.swing.JLabel();
+        Agg6 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -107,6 +204,132 @@ public class CharRoller extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText(this.myCrea.name);
 
+        Bash2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bash2ActionPerformed(evt);
+            }
+        });
+
+        Bash3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bash3ActionPerformed(evt);
+            }
+        });
+
+        Bash4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bash4ActionPerformed(evt);
+            }
+        });
+
+        Bash5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bash5ActionPerformed(evt);
+            }
+        });
+
+        Bash6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bash6ActionPerformed(evt);
+            }
+        });
+
+        Bash7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bash7ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Bash");
+
+        Let5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let5ActionPerformed(evt);
+            }
+        });
+
+        Let4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let4ActionPerformed(evt);
+            }
+        });
+
+        Let1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let1ActionPerformed(evt);
+            }
+        });
+
+        Let3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let3ActionPerformed(evt);
+            }
+        });
+
+        Let2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let2ActionPerformed(evt);
+            }
+        });
+
+        Let7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let7ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Lethal");
+
+        Let6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Let6ActionPerformed(evt);
+            }
+        });
+
+        Agg5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg5ActionPerformed(evt);
+            }
+        });
+
+        Agg4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg4ActionPerformed(evt);
+            }
+        });
+
+        Agg1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg1ActionPerformed(evt);
+            }
+        });
+
+        Agg3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg3ActionPerformed(evt);
+            }
+        });
+
+        Agg2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg2ActionPerformed(evt);
+            }
+        });
+
+        Agg7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg7ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Agg");
+
+        Agg6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agg6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,7 +337,7 @@ public class CharRoller extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -130,7 +353,59 @@ public class CharRoller extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                             .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6))))
+                            .addComponent(jButton6)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(Bash1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bash2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bash3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bash4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bash5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bash6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bash7))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                    .addComponent(Agg1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Agg2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Agg3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Agg4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Agg5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Agg6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Agg7))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Let7))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -138,7 +413,37 @@ public class CharRoller extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addComponent(Bash1)
+                    .addComponent(Bash2)
+                    .addComponent(Bash3)
+                    .addComponent(Bash4)
+                    .addComponent(Bash5)
+                    .addComponent(Bash6)
+                    .addComponent(Bash7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Let1)
+                    .addComponent(Let2)
+                    .addComponent(Let4)
+                    .addComponent(Let5)
+                    .addComponent(Let6)
+                    .addComponent(Let7)
+                    .addComponent(Let3)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10)
+                    .addComponent(Agg1)
+                    .addComponent(Agg2)
+                    .addComponent(Agg4)
+                    .addComponent(Agg5)
+                    .addComponent(Agg6)
+                    .addComponent(Agg7)
+                    .addComponent(Agg3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton4)
@@ -170,6 +475,7 @@ public class CharRoller extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //rolls
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         this.jLabel1.setText(this.myCrea.initRoll()+" Successes");
@@ -196,6 +502,93 @@ public class CharRoller extends javax.swing.JFrame {
         this.jLabel6.setText(this.myCrea.aggravatedRoll()+" Successes");
     }//GEN-LAST:event_jButton6ActionPerformed
 
+
+    //This is supposed to lit all the buttons before the one you click
+    private void Bash4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bash4ActionPerformed
+        litBashButtons(4);// TODO add your handling code here:
+    }//GEN-LAST:event_Bash4ActionPerformed
+
+    private void Bash2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bash2ActionPerformed
+        litBashButtons(2);// TODO add your handling code here:
+        
+        
+
+    }//GEN-LAST:event_Bash2ActionPerformed
+
+    private void Bash3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bash3ActionPerformed
+        litBashButtons(3);// TODO add your handling code here:
+        
+    }//GEN-LAST:event_Bash3ActionPerformed
+
+    private void Bash5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bash5ActionPerformed
+        litBashButtons(5);// TODO add your handling code here:
+    }//GEN-LAST:event_Bash5ActionPerformed
+
+    private void Bash6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bash6ActionPerformed
+       litBashButtons(6); // TODO add your handling code here:
+    }//GEN-LAST:event_Bash6ActionPerformed
+
+    private void Bash7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bash7ActionPerformed
+        litBashButtons(7);// TODO add your handling code here:
+    }//GEN-LAST:event_Bash7ActionPerformed
+
+    private void Let1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let1ActionPerformed
+       litLetButtons(1); // TODO add your handling code here:
+    }//GEN-LAST:event_Let1ActionPerformed
+
+    private void Let2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let2ActionPerformed
+    litLetButtons(2);        // TODO add your handling code here:
+    }//GEN-LAST:event_Let2ActionPerformed
+
+    private void Let3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let3ActionPerformed
+        litLetButtons(3);// TODO add your handling code here:
+    }//GEN-LAST:event_Let3ActionPerformed
+
+    private void Let4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let4ActionPerformed
+        litLetButtons(4);// TODO add your handling code here:
+    }//GEN-LAST:event_Let4ActionPerformed
+
+    private void Let5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let5ActionPerformed
+    litLetButtons(5);        // TODO add your handling code here:
+    }//GEN-LAST:event_Let5ActionPerformed
+
+    private void Let6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let6ActionPerformed
+    litLetButtons(6);        // TODO add your handling code here:
+    }//GEN-LAST:event_Let6ActionPerformed
+
+    private void Let7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let7ActionPerformed
+    litLetButtons(7);        // TODO add your handling code here:
+    }//GEN-LAST:event_Let7ActionPerformed
+
+    private void Agg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg1ActionPerformed
+        litAggButtons(1);// TODO add your handling code here:
+    }//GEN-LAST:event_Agg1ActionPerformed
+
+    private void Agg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg2ActionPerformed
+    litAggButtons(2);        // TODO add your handling code here:
+    }//GEN-LAST:event_Agg2ActionPerformed
+
+    private void Agg3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg3ActionPerformed
+    litAggButtons(3);        // TODO add your handling code here:
+    }//GEN-LAST:event_Agg3ActionPerformed
+
+    private void Agg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg4ActionPerformed
+    litAggButtons(4);        // TODO add your handling code here:
+    }//GEN-LAST:event_Agg4ActionPerformed
+
+    private void Agg5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg5ActionPerformed
+        litAggButtons(5);// TODO add your handling code here:
+    }//GEN-LAST:event_Agg5ActionPerformed
+
+    private void Agg6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg6ActionPerformed
+       litAggButtons(6);        // TODO add your handling code here:
+    }//GEN-LAST:event_Agg6ActionPerformed
+
+    private void Agg7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agg7ActionPerformed
+        litAggButtons(7);        // TODO add your handling code here:
+    }//GEN-LAST:event_Agg7ActionPerformed
+
+
     /**
     * @param args the command line arguments
     */
@@ -208,6 +601,27 @@ public class CharRoller extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Agg1;
+    private javax.swing.JToggleButton Agg2;
+    private javax.swing.JToggleButton Agg3;
+    private javax.swing.JToggleButton Agg4;
+    private javax.swing.JToggleButton Agg5;
+    private javax.swing.JToggleButton Agg6;
+    private javax.swing.JToggleButton Agg7;
+    private javax.swing.JToggleButton Bash1;
+    private javax.swing.JToggleButton Bash2;
+    private javax.swing.JToggleButton Bash3;
+    private javax.swing.JToggleButton Bash4;
+    private javax.swing.JToggleButton Bash5;
+    private javax.swing.JToggleButton Bash6;
+    private javax.swing.JToggleButton Bash7;
+    private javax.swing.JToggleButton Let1;
+    private javax.swing.JToggleButton Let2;
+    private javax.swing.JToggleButton Let3;
+    private javax.swing.JToggleButton Let4;
+    private javax.swing.JToggleButton Let5;
+    private javax.swing.JToggleButton Let6;
+    private javax.swing.JToggleButton Let7;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -215,14 +629,23 @@ public class CharRoller extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 
     //more variables
     private Creature myCrea;
+    ArrayList<JToggleButton> BashingB;
+    ArrayList<JToggleButton> LethalB;
+    ArrayList<JToggleButton> AggB;
+
+
+
 }

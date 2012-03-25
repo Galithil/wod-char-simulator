@@ -5,4 +5,9 @@ public class Custom extends Creature {
 		super(name,init,attack,damage,dodge,resist,rAgg, new Medium());
 		
 	}
+    @Override
+        public String toString(){
+            return(super.name+"   Custom   ");
+            
+        }
 }

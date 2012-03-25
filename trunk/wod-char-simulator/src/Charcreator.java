@@ -270,10 +270,10 @@ public class Charcreator extends javax.swing.JFrame {
        }
         if(this.jComboBox1.getSelectedIndex()==0){
            cm.addCrea(new Goule(this.jTextField1.getText(), lev));
-       }else if (this.jComboBox2.getSelectedIndex()==2){
+       }else if (this.jComboBox1.getSelectedIndex()==1){
            cm.addCrea(new Garou(this.jTextField1.getText(), lev));
 
-       }else if (this.jComboBox2.getSelectedIndex()==3){
+       }else if (this.jComboBox1.getSelectedIndex()==2){
            cm.addCrea(new Vampire(this.jTextField1.getText(), lev));
 
        }else{
@@ -411,6 +411,8 @@ public class Charcreator extends javax.swing.JFrame {
     }
 
     private void toggleEditable(boolean b){
+
+        this.jComboBox2.setEnabled(!b);
         this.jTextField2.setEditable(b);
         this.jTextField3.setEditable(b);
         this.jTextField4.setEditable(b);
